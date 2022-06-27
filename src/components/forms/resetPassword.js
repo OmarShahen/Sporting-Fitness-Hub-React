@@ -42,7 +42,6 @@ const ResetPassword = () => {
         .then(response => {
             setSubmitting(false)
             setDone(true)
-            
         })
         .catch(error => {
             setSubmitting(false)
