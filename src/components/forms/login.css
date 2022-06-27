@@ -1,0 +1,83 @@
+.login-form-green-background {
+    background-color: #32CD32;
+    height: 50vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    z-index: -1;
+}
+
+.login-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.login-form-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #FFF;
+    border-radius: 5px;
+    padding: 2rem 4rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.login-form-body form div {
+    padding: 1rem 1rem;
+}
+
+.login-form-body p {
+    color: red;
+    font-weight: bold;
+}
+
+.login-form-body input {
+    border: none;
+    border-bottom: 2px solid #DCDCDC;
+    width: 100%;
+    padding: .5rem 6rem .5rem 0rem;
+}
+
+.login-form-body input:focus {
+    outline: none;
+}
+
+.login-form-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 3rem;
+}
+
+.login-form-header img {
+    width: 10rem;
+    height: 10rem;
+}
+
+.login-form-body input[type="submit"] {
+    width: 100%;
+    background-color: #32CD32;
+    color: #FFF;
+    font-weight: normal;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    padding: .5rem 1rem;
+}
+
+.submit-btn-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width: 650px) {
+    .login-form-container {
+        padding: 3rem 3rem;
+        margin: 0rem 1rem;
+    }
+  }

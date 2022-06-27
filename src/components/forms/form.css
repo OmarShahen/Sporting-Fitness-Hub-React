@@ -1,0 +1,146 @@
+.modal-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+}
+
+.modal-header {
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: .5rem;
+    margin: 0;
+}
+
+.modal-wrapper {
+    background-color: #FFF;
+    border-radius: 0px;
+    margin: .5rem .5rem;
+    border-radius: 10px;
+    
+}
+
+.modal-wrapper form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: .5rem 7rem;
+}
+
+.modal-wrapper form p {
+    color: #DC3545;
+    padding: 0;
+    margin: 1rem 0;
+    font-weight: bold;
+    text-align: center;
+}
+
+.modal-wrapper input {
+    border: none;
+    background-color: #FFF;
+    border-radius: 0px;
+    border-bottom: 2px solid #DCDCDC;
+    padding: .5rem 8rem .5rem 0rem;
+    margin-top: .5rem;
+    font-weight: bold;
+    width: 100%;
+}
+
+.modal-wrapper input:focus {
+    outline: none;
+    border-bottom: 2px solid dodgerblue;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload {
+    border: none;
+    color: #FFF;
+    text-align: center;
+    padding: .5rem 1rem;
+    border-radius: 5px;
+    background-color: #32CD32;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.modal-wrapper input::placeholder {
+    text-align: left;
+    color: #8e8e8e;
+}
+
+.description-label {
+    color: #8e8e8e;
+    font-weight: bold;
+}
+
+.form-text-area {
+    width: 100%;
+    border: none;
+    border: 2px solid #DCDCDC;
+    height: 7rem;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #8e8e8e;
+}
+
+.form-text-area:focus {
+    outline: none;
+    border: 2px solid dodgerblue;
+}
+
+.form-btns {
+    margin-top: .5rem;
+    padding: .5rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.form-btns .submit-btn {
+    background-color: dodgerblue;
+    color: #FFF;    
+    text-align: center;
+    border: none;
+    padding: .5rem 1rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-btns .cancel-btn {
+    text-align: center;
+    border: none;
+    padding: .5rem 1rem;
+    border-radius: 5px;
+}
+
+@media only screen and (max-width: 650px) {
+
+    .modal-wrapper {
+        margin: 0rem 1rem;
+    }
+
+    .modal-wrapper form {
+        padding: .5rem 1rem;
+    }
+
+    .modal-wrapper input {
+        padding: .5rem 4rem .5rem 0rem;
+    }
+}
+
