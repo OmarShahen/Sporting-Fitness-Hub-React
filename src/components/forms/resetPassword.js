@@ -4,6 +4,7 @@ import sportingImage from '../../images/sporting.png'
 import { adminRequest } from '../../api/request'
 import { useNavigate } from 'react-router-dom'
 import { ThreeDots } from 'react-loader-spinner'
+import CheckCircleIcon from '@mui/icons-material/CheckCircle'
 
 
 const ResetPassword = () => {
@@ -17,6 +18,7 @@ const ResetPassword = () => {
     const [confirmPasswordError, setConfirmPasswordError] = useState('')
 
     const [submitting, setSubmitting] = useState(false)
+    const [done, setDone] = useState(false)
 
     const userId = window.location.pathname.split('/')[2]
 
@@ -39,7 +41,8 @@ const ResetPassword = () => {
         adminRequest.put(`/auth/reset-password/${userId}`, { newPassword: password })
         .then(response => {
             setSubmitting(false)
-            navigate('/login')
+            setDone(true)
+            
         })
         .catch(error => {
             setSubmitting(false)
@@ -62,6 +65,12 @@ const ResetPassword = () => {
                         <img src={sportingImage} alt="sporting club" />
                     </div>
                     <div className="login-form-body">
+                    { done ? 
+                        <div style={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column" }}>
+                            <CheckCircleIcon style={{ width: '100', height: '100', color: '#32CD32' }}/>
+                            <p style={{ color: "#32CD32", fontWeight: "bold" }}>Password Is Reset Successfully</p>
+                        </div>
+                        :
                         <form>
                             <div>
                                 <p>{passwordError}</p>
@@ -88,6 +97,7 @@ const ResetPassword = () => {
                             }
                             </div>
                         </form>
+                    }
                     </div>
                 </div>
             </div>

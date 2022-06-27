@@ -36,7 +36,7 @@ const SideBar = () => {
                         Members
                     </NavLink>
                 </li>
-                <li className="side-bar-logout">
+                <li>
                         <NavLink to="/login" onClick={ e => {
                             localStorage.setItem('accessToken', null)
                         }}>
