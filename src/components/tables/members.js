@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react'
 import MaterialTable from 'material-table'
 import TableIcons from './tableIcons'
 import { adminRequest } from '../../api/request'
-
+import gazeeraImage from '../../images/gazeera.jpeg'
+import sportingImage from '../../images/sporting.png'
+import saedImage from '../../images/saed.jpeg'
 
 const MembersTable = () => {
 
@@ -15,13 +17,21 @@ const MembersTable = () => {
 
 
     const columns = [
-        { title: 'Image', field: 'imageURL', editable: 'never', headerStyle: headerStyle, render: prop => {
+        { title: 'Image', field: 'imageURL', editable: 'never', export: false, headerStyle: headerStyle, render: prop => {
             return <img src={prop.imageURL} alt="package description" />
         } },
         { title: 'username', field: 'username', headerStyle: headerStyle },
         { title: 'email', field: 'email', headerStyle: headerStyle },
         { title: 'phone', field: 'phone', headerStyle: headerStyle },
-        { title: 'club', field: 'club', headerStyle: headerStyle },
+        { title: 'club', field: 'club', headerStyle: headerStyle, render: prop => {
+            if(prop.club === 'jazeera') {
+                return <img src={gazeeraImage} className="club-logo" alt="jazeera club image" />
+            } else if(prop.club === 'sporting') {
+                return <img src={sportingImage} className="club-logo" alt="sporting club image" />
+            } else if(prop.club === 'saed') {
+                return <img src={saedImage} className="club-logo" alt="sporting club image" />
+            }
+        } },
         { title: 'membership', field: 'membership', headerStyle: headerStyle },
         { title: 'Registration Date', field: 'createdAt', editable: 'never', headerStyle: headerStyle },
 
@@ -73,7 +83,7 @@ const MembersTable = () => {
                 columns={columns}
                 data={members}
                 icons={TableIcons}
-                options={{ pageSize: 10 }}
+                options={{ pageSize: 10, exportButton: true }}
                 editable={{
                     onRowDelete: deleteMember
                 }}

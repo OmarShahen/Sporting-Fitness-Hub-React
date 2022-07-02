@@ -17,7 +17,7 @@ const UsersTable = ({ openForm }) => {
     const [showToast, setShowToast] = useState(false)
 
     const columns = [
-        { title: 'Image', field: 'imageURL', editable: 'never', headerStyle: headerStyle, render: prop => {
+        { title: 'Image', field: 'imageURL', export: false, editable: 'never', headerStyle: headerStyle, render: prop => {
             return <img src={prop.imageURL} alt="package description" />
         } },
         { title: 'username', field: 'username', headerStyle: headerStyle, validate: rowData => rowData.username === '' ? 'username is required' : '' },
@@ -87,7 +87,7 @@ const UsersTable = ({ openForm }) => {
                 columns={columns}
                 data={users}
                 icons={TableIcons}
-                options={{ pageSize: 10 }}
+                options={{ pageSize: 10, exportButton: true }}
                 editable={{
                     onRowDelete: deleteUser,
                     onRowUpdate: updateUser

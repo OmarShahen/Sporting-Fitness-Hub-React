@@ -17,7 +17,7 @@ const PackagesTable = ({ openForm }) => {
     const [errorMessage, setErrorMessage] = useState('')
 
     const columns = [
-        { title: 'Image', field: 'imageURL', editable: 'never', headerStyle: headerStyle, render: prop => {
+        { title: 'Image', field: 'imageURL', export: false, editable: 'never', headerStyle: headerStyle, render: prop => {
             return <img src={prop.imageURL} alt="package description" />
         } },
         { title: 'Title', field: 'title', headerStyle: headerStyle, validate: rowData => rowData.title === '' ? 'title is required' : '' },
@@ -83,7 +83,7 @@ const PackagesTable = ({ openForm }) => {
                 columns={columns}
                 data={packages}
                 icons={TableIcons}
-                options={{ pageSize: 5 }}
+                options={{ pageSize: 5, exportButton: true }}
                 editable={{
                     onRowUpdate: updatePackage,
                     onRowDelete: deletePackage
