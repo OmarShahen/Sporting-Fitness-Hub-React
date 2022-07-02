@@ -23,15 +23,7 @@ const MembersTable = () => {
         { title: 'username', field: 'username', headerStyle: headerStyle },
         { title: 'email', field: 'email', headerStyle: headerStyle },
         { title: 'phone', field: 'phone', headerStyle: headerStyle },
-        { title: 'club', field: 'club', headerStyle: headerStyle, render: prop => {
-            if(prop.club === 'jazeera') {
-                return <img src={gazeeraImage} className="club-logo" alt="jazeera club image" />
-            } else if(prop.club === 'sporting') {
-                return <img src={sportingImage} className="club-logo" alt="sporting club image" />
-            } else if(prop.club === 'saed') {
-                return <img src={saedImage} className="club-logo" alt="sporting club image" />
-            }
-        } },
+        { title: 'club', field: 'club', headerStyle: headerStyle },
         { title: 'membership', field: 'membership', headerStyle: headerStyle },
         { title: 'Registration Date', field: 'createdAt', editable: 'never', headerStyle: headerStyle },
 

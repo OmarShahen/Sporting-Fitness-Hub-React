@@ -22,15 +22,7 @@ const RegisteredPackagesTable = () => {
         { title: 'Member Name', field: 'memberName', headerStyle: headerStyle },
         { title: 'Member Phone', field: 'memberPhone', headerStyle: headerStyle },
         { title: 'Membership', field: 'membership', headerStyle: headerStyle },
-        { title: 'Club', field: 'club', headerStyle: headerStyle, render: prop => {
-            if(prop.club === 'jazeera') {
-                return <img src={gazeeraImage} className="club-logo" alt="jazeera club image" />
-            } else if(prop.club === 'sporting') {
-                return <img src={sportingImage} className="club-logo" alt="sporting club image" />
-            } else if(prop.club === 'saed') {
-                return <img src={saedImage} className="club-logo" alt="sporting club image" />
-            }
-        } },
+        { title: 'Club', field: 'club', headerStyle: headerStyle },
         { title: 'Payment Method', field: 'paymentMethod', headerStyle: headerStyle },
         { title: 'Registration Date', field: 'createdAt', headerStyle: headerStyle },
         { title: 'Package', field: 'packageName', headerStyle: headerStyle },
