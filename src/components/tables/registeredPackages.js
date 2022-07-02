@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react'
 import MaterialTable from 'material-table'
 import TableIcons from './tableIcons'
 import { adminRequest } from '../../api/request'
+import gazeeraImage from '../../images/gazeera.jpeg'
+import sportingImage from '../../images/sporting.png'
+import saedImage from '../../images/saed.jpeg'
 
 const RegisteredPackagesTable = () => {
 
@@ -13,13 +16,21 @@ const RegisteredPackagesTable = () => {
     const [isLoading, setIsLoading] = useState(true)
 
     const columns = [
-        { title: 'Image', field: 'imageURL', editable: 'never', headerStyle: headerStyle, render: prop => {
+        { title: 'Image', field: 'imageURL', editable: 'never', export: false, headerStyle: headerStyle, render: prop => {
             return <img src={prop.imageURL} alt="package description" />
         } },
         { title: 'Member Name', field: 'memberName', headerStyle: headerStyle },
         { title: 'Member Phone', field: 'memberPhone', headerStyle: headerStyle },
         { title: 'Membership', field: 'membership', headerStyle: headerStyle },
-        { title: 'Club', field: 'club', headerStyle: headerStyle },
+        { title: 'Club', field: 'club', headerStyle: headerStyle, render: prop => {
+            if(prop.club === 'jazeera') {
+                return <img src={gazeeraImage} className="club-logo" alt="jazeera club image" />
+            } else if(prop.club === 'sporting') {
+                return <img src={sportingImage} className="club-logo" alt="sporting club image" />
+            } else if(prop.club === 'saed') {
+                return <img src={saedImage} className="club-logo" alt="sporting club image" />
+            }
+        } },
         { title: 'Payment Method', field: 'paymentMethod', headerStyle: headerStyle },
         { title: 'Registration Date', field: 'createdAt', headerStyle: headerStyle },
         { title: 'Package', field: 'packageName', headerStyle: headerStyle },
@@ -88,7 +99,7 @@ const RegisteredPackagesTable = () => {
                 columns={columns}
                 data={registeredPackages}
                 icons={TableIcons}
-                options={{ pageSize: 10 }}
+                options={{ pageSize: 10, exportButton: true }}
                 editable={{
                     onRowDelete: deleteMemberPackage
                 }}

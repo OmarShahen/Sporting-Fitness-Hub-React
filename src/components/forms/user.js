@@ -50,6 +50,8 @@ const UserForm = ({ closeForm }) => {
 
         const userData = { username, email, password, phone }
 
+        console.log(userData)
+
         setLoading(true)
 
         adminRequest.post('/users', userData)

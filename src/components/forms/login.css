@@ -1,5 +1,5 @@
 .login-form-green-background {
-    background-color: #32CD32;
+    background-color: #00923d;
     height: 50vh;
     width: 100vw;
     position: fixed;
@@ -60,7 +60,7 @@
 
 .login-form-body input[type="submit"] {
     width: 100%;
-    background-color: #32CD32;
+    background-color: #00923d;
     color: #FFF;
     font-weight: normal;
     border-radius: 5px;
