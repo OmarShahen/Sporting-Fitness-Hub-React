@@ -23,7 +23,7 @@ const RegisteredPackagesTable = () => {
         { title: 'Member Phone', field: 'memberPhone', headerStyle: headerStyle },
         { title: 'Membership', field: 'membership', headerStyle: headerStyle },
         { title: 'Club', field: 'club', headerStyle: headerStyle },
-        { title: 'Payment Method', field: 'paymentMethod', headerStyle: headerStyle },
+        /*{ title: 'Payment Method', field: 'paymentMethod', headerStyle: headerStyle },*/
         { title: 'Registration Date', field: 'createdAt', headerStyle: headerStyle },
         { title: 'Package', field: 'packageName', headerStyle: headerStyle },
         { title: 'Registration User', field: 'username', headerStyle: headerStyle },
